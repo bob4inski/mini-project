@@ -3,6 +3,7 @@ services:
     build:
       context: ./app
       dockerfile: Dockerfile
+    command: gunicorn --bind 0.0.0.0:5000 --workers 6 app:app
     networks:
       - cats
 
